@@ -406,9 +406,10 @@ async function uploadFiles(files) {
 async function loadDocumentList() {
 
     const documentList =
-        document.getElementById(
-            "documentList"
-        );
+        document.getElementById("documentList");
+
+    const documentsSection =
+        document.getElementById("documentsSection");
 
 
     try {
@@ -438,11 +439,17 @@ async function loadDocumentList() {
 
         if (files.length === 0) {
 
-            documentList.innerHTML =
-                "<p class='empty-documents'>No documents indexed.</p>";
+            documentsSection.classList.remove(
+                "has-documents"
+            );
 
             return;
         }
+
+
+        documentsSection.classList.add(
+            "has-documents"
+        );
 
 
         for (const file of files) {
@@ -476,9 +483,7 @@ async function loadDocumentList() {
             `;
 
 
-            documentList.appendChild(
-                item
-            );
+            documentList.appendChild(item);
         }
 
 
@@ -486,6 +491,9 @@ async function loadDocumentList() {
 
         console.error(error);
 
+        documentsSection.classList.remove(
+            "has-documents"
+        );
 
         documentList.innerHTML =
             "<p>Could not load document list.</p>";

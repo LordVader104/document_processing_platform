@@ -61,7 +61,7 @@ h2 {
 /* UPLOAD */
 
 .upload-section {
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .upload-area {
@@ -103,16 +103,21 @@ h2 {
 }
 
 #uploadStatus {
-    margin-top: 15px;
+    margin-top: 0;
 }
 
+#uploadStatus:not(:empty) {
+    margin-top: 15px;
+}
 /* SCROLLABLE LISTS */
 
 .collapsible-list {
-    height: 300px;
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.collapsible-list:not(:empty) {
     margin-bottom: 20px;
 }
 
@@ -165,11 +170,20 @@ h2 {
 
 /* DOCUMENTS */
 
+#documentsSection {
+    display: none;
+}
+
+#documentsSection.has-documents {
+    display: block;
+}
+
 .document-section-title {
     font-size: 20px;
     font-weight: bold;
     margin: 30px 0 15px;
 }
+
 
 .document-item {
     display: flex;
@@ -206,10 +220,14 @@ h2 {
     color: #ddd;
 }
 
+.document-section-title:has(+ #documentList:empty) {
+    display: none;
+}
+
 /* SEARCH */
 
 .search-section {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .search-box {
