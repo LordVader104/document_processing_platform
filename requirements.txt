@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+httpx
+python-dotenv
+python-multipart
+pymupdf
+jinja2
+fonttools
+psutil
+psycopg

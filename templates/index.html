@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document Processing Platform</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Document Processing Platform</h1>
+
+    <div class="system-info">
+
+        <div>
+            <span class="system-label">System</span>
+            <span id="systemName">Windows</span>
+        </div>
+
+        <div>
+            <span class="system-label">CPU</span>
+            <span id="cpuInfo">-</span>
+        </div>
+
+        <div>
+            <span class="system-label">RAM</span>
+            <span id="ramInfo">-</span>
+        </div>
+
+        <div>
+            <span class="system-label">Workers</span>
+            <span id="workerInfo">-</span>
+        </div>
+
+    </div>
+
+    <div class="worker-note" id="workerNote">
+        Document processing workers are being initialized...
+    </div>
+
+
+    <div class="upload-section">
+
+        <h2>Upload Documents</h2>
+
+        <div class="upload-area" id="uploadArea">
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".pdf,.txt"
+                multiple
+                hidden
+            >
+
+            <div class="upload-content">
+
+                <div class="upload-icon">↑</div>
+
+                <p>
+                    <strong>Drop PDF or TXT files here</strong>
+                </p>
+
+                <p class="upload-subtext">
+                    or click to browse
+                </p>
+
+            </div>
+
+        </div>
+
+<div id="uploadStatus" class="collapsible-list"></div>
+
+    </div>
+
+
+
+
+<div class="document-section-title">
+    Indexed Documents
+</div>
+
+<div
+    id="documentList"
+    class="collapsible-list"
+></div>
+
+    <div class="search-section">
+
+        <h2>Search</h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search documents..."
+            >
+
+            <select id="algorithmSelect">
+                <option value="bm25" selected>BM25</option>
+                <option value="tfidf">TF-IDF</option>
+            </select>
+
+            <button onclick="search()">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="results"></div>
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
