@@ -86,8 +86,6 @@ combining the search engine and TaskFlow components.
              └──────────────┬────────────┘
                             │
                             ▼
-                       PostgreSQL#   d o c u m e n t _ p r o c e s s i n g _ p l a t f o r m 
- 
- #   d o c u m e n t _ p r o c e s s i n g _ p l a t f o r m 
+                       PostgreSQL
  
  
